@@ -1,0 +1,10 @@
+[user]
+	name = gideonoludeyi
+	email = 49620086+gideonoludeyi@users.noreply.github.com
+[core]
+	editor = vim
+	excludesFile = ~/.gitignore
+
+[alias]
+	st = status -s
+	lgo = log --oneline
