@@ -8,3 +8,5 @@
 [alias]
 	st = status -s
 	lgo = log --oneline
+[init]
+	defaultBranch = main
