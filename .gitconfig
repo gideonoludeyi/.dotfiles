@@ -11,6 +11,11 @@
   lgo = log --oneline
 [init]
   defaultBranch = main
+[url "git@github.com:"]
+  pushInsteadOf = "https://github.com/"
+[merge]
+  tool = meld
+  conflictstyle = zdiff3
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
