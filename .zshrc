@@ -81,7 +81,6 @@ plugins=(
 ZSH_DOTENV_FILE=.env
 ZSH_DOTENV_PROMPT=false
 
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
