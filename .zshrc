@@ -75,11 +75,14 @@ plugins=(
   dotenv
   zsh-autosuggestions
   zsh-syntax-highlighting
+  gradle
 )
 
 # dotenv plugin configurations
 ZSH_DOTENV_FILE=.env
 ZSH_DOTENV_PROMPT=false
+
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
 
