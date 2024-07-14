@@ -72,10 +72,11 @@ ZSH_CUSTOM=$HOME/.zsh/custom
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  dotenv
   zsh-autosuggestions
   zsh-syntax-highlighting
   gradle
+  mvn
+  gh
 )
 
 # dotenv plugin configurations
@@ -111,4 +112,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
