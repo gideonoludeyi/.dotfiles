@@ -77,6 +77,7 @@ plugins=(
   gradle
   mvn
   gh
+  dotenv
 )
 
 # dotenv plugin configurations
