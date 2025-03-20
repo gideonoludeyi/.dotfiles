@@ -18,8 +18,19 @@
       environment.systemPackages =
         [
           pkgs.mkalias
+          pkgs.gnupg
+          pkgs.tree
+          pkgs.imagemagick
+          pkgs.pinentry_mac
+          pkgs.git
           pkgs.neovim
           pkgs.ffmpeg
+          pkgs.gradle
+          pkgs.maven
+          pkgs.nodejs_22
+          pkgs.gh
+          pkgs.go
+          pkgs.vhs
         ];
 
       homebrew = {
@@ -31,6 +42,8 @@
         ];
         # Prune unmentioned casks via "zap"
         # onActivation.cleanup = "zap";
+        onActivation.autoUpdate = true;
+        onActivation.upgrade = true;
       };
 
       fonts.packages = [
@@ -56,6 +69,11 @@
           ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
         done
             '';
+
+      system.defaults = {
+        # dock.autohide = true;
+        NSGlobalDomain.AppleICUForce24HourTime = true;
+      };
 
       # Determinate uses its own daemon to manage the Nix installation that
       # conflicts with nix-darwin’s native Nix management.
