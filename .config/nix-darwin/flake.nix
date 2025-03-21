@@ -21,7 +21,6 @@
           pkgs.gnupg
           pkgs.tree
           pkgs.imagemagick
-          pkgs.pinentry_mac
           pkgs.git
           pkgs.neovim
           pkgs.ffmpeg
