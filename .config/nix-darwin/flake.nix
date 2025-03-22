@@ -29,11 +29,13 @@
           pkgs.nodejs_22
           pkgs.gh
           pkgs.go
+          pkgs.rustup
           pkgs.vhs
         ];
 
       homebrew = {
-        enable = true;
+        # enable=false until `brew bundle` is fixed
+        enable = false;
         casks = [
           "font-fira-code-nerd-font"
           "font-jetbrains-mono"
@@ -71,8 +73,10 @@
 
       system.defaults = {
         # dock.autohide = true;
-        NSGlobalDomain.AppleICUForce24HourTime = true;
+        NSGlobalDomain.AppleICUForce24HourTime = false;
       };
+
+      security.pam.services.sudo_local.touchIdAuth = true;
 
       # Determinate uses its own daemon to manage the Nix installation that
       # conflicts with nix-darwin’s native Nix management.
