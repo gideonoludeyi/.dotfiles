@@ -4,8 +4,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin/master";
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    # brew versions <v4.4.25 do not have access to `brew bundle` anymore
+    # keep as v4.4.25 until nix-homebrew installs >=v4.4.25 by default
+    nix-homebrew.inputs.brew-src.url = "github:Homebrew/brew/4.4.25";
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
@@ -34,8 +37,7 @@
         ];
 
       homebrew = {
-        # enable=false until `brew bundle` is fixed
-        enable = false;
+        enable = true;
         casks = [
           "font-fira-code-nerd-font"
           "font-jetbrains-mono"
