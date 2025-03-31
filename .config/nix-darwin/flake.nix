@@ -10,27 +10,30 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
   let
-    configuration = { pkgs, config, ... }: {
+    configuration = { pkgs, lib, config, ... }: {
       nixpkgs.config.allowUnfree = true;
 
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      environment.systemPackages =
+      environment.systemPackages = with pkgs;
         [
-          pkgs.mkalias
-          pkgs.gnupg
-          pkgs.tree
-          pkgs.imagemagick
-          pkgs.git
-          pkgs.neovim
-          pkgs.ffmpeg
-          pkgs.gradle
-          pkgs.maven
-          pkgs.nodejs_22
-          pkgs.gh
-          pkgs.go
-          pkgs.rustup
-          pkgs.vhs
+          mkalias
+          gnupg
+          tree
+          imagemagick
+          git
+          neovim
+          ffmpeg
+          gradle
+          maven
+          nodejs_22
+          gh
+          go
+          rustup
+          vhs
+          jdk11
+          sbt
+          scala-cli
         ];
 
       homebrew = {
@@ -57,7 +60,7 @@
           pathsToLink = "/Applications";
         };
       in
-        pkgs.lib.mkForce ''
+        lib.mkForce ''
         # Set up applications.
         echo "setting up /Applications..." >&2
         rm -rf /Applications/Nix\ Apps
@@ -69,6 +72,11 @@
           ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
         done
             '';
+
+      # https://samasaur1.github.io/blog/jdks-on-nix-darwin
+      system.activationScripts.extraActivation.text = ''
+        ln -sf "${pkgs.jdk11}/zulu-11.jdk" "/Library/Java/JavaVirtualMachines/"
+      '';
 
       system.defaults = {
         # dock.autohide = true;
