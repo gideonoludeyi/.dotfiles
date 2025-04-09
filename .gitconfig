@@ -1,5 +1,5 @@
 [user]
-  name = gideonoludeyi
+  name = "Gideon Oludeyi"
   email = 49620086+gideonoludeyi@users.noreply.github.com
   signingkey = 4E97812C14CDC6DD4AB7F5D0681F9EFB110F2A2C
 [core]
@@ -23,5 +23,11 @@
   required = true
 [commit]
 	gpgsign = true
+[tag]
+	gpgsign = true
 [trailer "co-author"]
-	key = "Co-authored-by: "
+	key = "Co-authored-by"
+[trailer "resolves"]
+	key = "Resolves"
+[trailer "fixes"]
+	key = "Fixes"
