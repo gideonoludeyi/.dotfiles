@@ -21,9 +21,9 @@
           gnupg
           tree
           imagemagick
+          ffmpeg
           git
           neovim
-          ffmpeg
           gradle
           maven
           nodejs_22
