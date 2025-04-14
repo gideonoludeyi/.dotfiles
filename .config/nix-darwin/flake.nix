@@ -32,8 +32,6 @@
           rustup
           vhs
           jdk11
-          sbt
-          scala-cli
         ];
 
       homebrew = {
