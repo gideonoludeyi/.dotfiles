@@ -32,6 +32,7 @@
           rustup
           vhs
           jdk11
+          texliveFull
         ];
 
       homebrew = {
