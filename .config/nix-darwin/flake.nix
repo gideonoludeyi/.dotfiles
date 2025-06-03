@@ -72,11 +72,6 @@
         done
             '';
 
-      # https://samasaur1.github.io/blog/jdks-on-nix-darwin
-      system.activationScripts.extraActivation.text = ''
-        ln -sf "${pkgs.jdk11}/zulu-11.jdk" "/Library/Java/JavaVirtualMachines/"
-      '';
-
       system.defaults = {
         # dock.autohide = true;
         NSGlobalDomain.AppleICUForce24HourTime = false;
