@@ -23,6 +23,7 @@
           imagemagick
           ffmpeg
           git
+          ripgrep
           neovim
           gradle
           maven
@@ -30,9 +31,8 @@
           gh
           go
           rustup
-          vhs
-          jdk11
           texliveFull
+          uv
         ];
 
       homebrew = {
