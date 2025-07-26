@@ -1,0 +1,12 @@
+{
+  "theme": "GitHub",
+  "contextFileName": [
+    "AGENT.md",
+    "AGENTS.md",
+    "GEMINI.md",
+    "CLAUDE.md"
+  ],
+  "selectedAuthType": "oauth-personal",
+  "preferredEditor": "nvim",
+  "mcpServers": {}
+}
