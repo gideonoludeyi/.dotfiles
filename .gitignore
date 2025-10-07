@@ -46,12 +46,25 @@ Thumbs.db
 .vscode/*
 .vagrant/
 
+# Cryptographic Keys #
+######################
+*.pub
+*.pem
+*.key
+*.pgp
+*.der
+*.cer
+*.crt
+*.cert
+
 # Misc #
 ##########
 .dotfiles/*
 
 .tmp/*
 tmp/*
+.temp/*
+temp/*
 
 # Eclipse m2e generated files
 # Eclipse Core
@@ -62,3 +75,7 @@ tmp/*
 .factorypath
 
 .venv
+
+.crush
+
+wandb/
